@@ -1,7 +1,7 @@
 {
   "name": "launchproof",
-  "description": "Fifteen free Claude skills that evaluate a business idea, test it before you spend, and turn it into a gated business plan: IdeaGauge scoring, a board on the Hormozi, Thiel, Priestley, Naval and Munger frameworks, a red team, 100 simulated buyers, a CFO and the 14-step Startup Blueprint. MIT.",
-  "version": "1.0.0",
+  "description": "Sixteen free Claude skills that evaluate a business idea, test it before you spend, and turn it into a gated business plan: IdeaGauge scoring, a board on the Hormozi, Thiel, Priestley, Naval and Munger frameworks, a red team, 100 simulated buyers, a CFO, the 14-step Startup Blueprint, and Launchproof Light for a quick brainstorm deck. MIT.",
+  "version": "1.1.0",
   "author": {
     "name": "Derick van Vuren",
     "url": "https://takeacourse.online"

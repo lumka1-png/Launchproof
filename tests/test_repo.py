@@ -8,10 +8,11 @@ from _load import ROOT, SKILLS_DIR
 SKILLS = ["launchproof", "launchproof-fit", "launchproof-score", "launchproof-board", "launchproof-redteam",
           "launchproof-competitors", "launchproof-consumer", "launchproof-pricing", "launchproof-offer",
           "launchproof-cfo", "launchproof-marketing", "launchproof-brand", "launchproof-ops", "launchproof-launch",
-          "launchproof-blueprint"]
-ABOUT = ("Fifteen free Claude skills that evaluate a business idea, test it before you spend, and turn it into a gated "
+          "launchproof-blueprint", "launchproof-light"]
+ABOUT = ("Sixteen free Claude skills that evaluate a business idea, test it before you spend, and turn it into a gated "
          "business plan: IdeaGauge scoring, a board on the Hormozi, Thiel, Priestley, Naval and Munger frameworks, a "
-         "red team, 100 simulated buyers, a CFO and the 14-step Startup Blueprint. MIT.")
+         "red team, 100 simulated buyers, a CFO, the 14-step Startup Blueprint, and Launchproof Light for a quick "
+         "brainstorm deck. MIT.")
 
 
 def frontmatter(path):
@@ -33,7 +34,7 @@ def text_files():
 
 
 class Repo(unittest.TestCase):
-    def test_fifteen_skill_folders(self):
+    def test_sixteen_skill_folders(self):
         found = sorted(d for d in os.listdir(SKILLS_DIR) if os.path.isfile(os.path.join(SKILLS_DIR, d, "SKILL.md")))
         self.assertEqual(found, sorted(SKILLS))
 
@@ -98,6 +99,7 @@ class Repo(unittest.TestCase):
 
     def test_examples_parse(self):
         for rel in ("launchproof-cfo/example.json", "launchproof-cfo/example-ai-consulting.json",
+                    "launchproof-light/example.deck.json",
                     "launchproof-consumer/customer.example.json",
                     "launchproof-score/criteria.json", "launchproof-blueprint/steps.json"):
             with open(os.path.join(SKILLS_DIR, rel), encoding="utf-8") as fh:

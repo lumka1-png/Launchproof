@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "launchproof",
-      "description": "Fifteen Claude skills that take a business idea from the first founder questions to a gated business plan: founder fit, the IdeaGauge score, a five-member board, a red team, competitors, a 100-buyer simulated panel, pricing, the offer, a CFO, marketing, brand, operations, a real-world test and the 14-step Startup Blueprint.",
+      "description": "Sixteen Claude skills that take a business idea from the first founder questions to a gated business plan, plus Launchproof Light: a quick, eight-agent assessment that ends in a PowerPoint deck for a team brainstorm.",
       "source": "./",
       "category": "productivity",
       "homepage": "https://github.com/lumka1-png/launchproof"

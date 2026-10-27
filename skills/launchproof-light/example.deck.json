@@ -1,0 +1,61 @@
+{
+ "idea": "Northlight Automation",
+ "one_liner": "AI workflows that cut admin hours for small accounting firms, sold as a monthly retainer.",
+ "date": "October 27, 2026",
+ "example": "Illustrative example: the board, buyer and market results are invented to show the format.",
+ "glance": {
+  "problem": "Small accounting firms lose hours every week to client intake, document chasing and follow-up emails.",
+  "customer": "Owners of accounting firms with 3 to 20 staff.",
+  "offer": "Done-for-you AI automations for intake, documents and follow-ups, maintained every month.",
+  "price": "$2,500 a month retainer (assumed)."
+ },
+ "assumptions": ["the price of $2,500 a month", "the founder works solo at first", "firms already use cloud accounting software"],
+ "board": [
+  {"person": "Alex Hormozi", "lens": "Offers", "score": 7, "vote": "FUND IF",
+   "reason": "A painful, expensive problem, but the offer sells setup work, not a guaranteed outcome.",
+   "recommendation": "Sell a result: 10 admin hours saved a week, or the next month is free.",
+   "quote": "Make people an offer so good they would feel stupid saying no.", "source": "$100M Offers (2021)"},
+  {"person": "Peter Thiel", "lens": "Monopoly", "score": 5, "vote": "PASS",
+   "reason": "Many freelancers sell the same tools; nothing yet stops a copycat.",
+   "recommendation": "Own one niche completely: accounting firms only, with their exact workflows.",
+   "quote": "Competition is for losers.", "source": "The Wall Street Journal (2014)"},
+  {"person": "Daniel Priestley", "lens": "Demand", "score": 6, "vote": "FUND IF",
+   "reason": "Demand is plausible, but the founder is not yet a known name among firm owners.",
+   "recommendation": "Publish one case study a month and speak at local accountants' meetups.",
+   "quote": "Pitch, Publish, Product, Profile and Partnerships", "source": "Key Person of Influence (2014)"},
+  {"person": "Naval Ravikant", "lens": "Leverage", "score": 6, "vote": "FUND IF",
+   "reason": "Today it is the founder's hours; it only compounds if the know-how becomes a product.",
+   "recommendation": "Turn the three most common workflows into a packaged template product.",
+   "quote": "You're not going to get rich renting out your time.", "source": "How to Get Rich (2018)"},
+  {"person": "Charlie Munger", "lens": "Inversion", "score": 7, "vote": "FUND",
+   "reason": "The downside is small: low startup cost, a job kept, and paying customers early.",
+   "recommendation": "List the three ways this fails, starting with a data-security incident, and prevent each.",
+   "quote": "Invert, always invert.", "source": "Poor Charlie's Almanack (2005)"}
+ ],
+ "strengths": ["A real, costly pain: admin hours", "Low startup cost, paid from the first client", "The founder knows accounting firms from the inside", "Recurring retainer revenue"],
+ "risks": [
+  {"risk": "Accounting software vendors build the same automations in.", "severity": 2, "from": "Red team"},
+  {"risk": "A client-data security incident ends trust overnight.", "severity": 2, "from": "Red team, Charlie Munger"},
+  {"risk": "Easy to copy: any freelancer can learn the same tools.", "severity": 3, "from": "Peter Thiel"},
+  {"risk": "The founder's hours cap growth.", "severity": 3, "from": "Naval Ravikant"}
+ ],
+ "customers": {"buy": 3, "total": 8,
+  "objections": ["Is my clients' data safe?", "$2,500 a month is a lot for a small firm", "My software may do this next year"],
+  "flip": ["A one-month paid pilot", "Proof from a firm like mine", "A data-protection guarantee"],
+  "voices": [{"who": "Simulated buyer: owner, 6-person firm", "says": "If it saves my team a day a week, I'd pay. Show me first."},
+             {"who": "Simulated buyer: partner, 15-person firm", "says": "Security is my first question, not the last."}]},
+ "market": {"competitors": [
+   {"name": "Generalist automation agencies", "what": "Automate any business, not accounting specifically", "price": "Project fees"},
+   {"name": "Marketplace freelancers", "what": "One-off automations, little maintenance", "price": "Hourly"},
+   {"name": "Do-it-yourself tools", "what": "Automation platforms the firm sets up itself", "price": "Subscription"},
+   {"name": "Accounting software add-ons", "what": "Built-in features from the firms' own software", "price": "Bundled"}],
+  "gap": "Nobody specializes in small accounting firms with maintained, done-for-you workflows and a security promise."},
+ "questions": ["Which single workflow would a firm pay for first?", "How could we guarantee the result, not just the work?",
+  "What would make us hard to copy in 12 months?", "How do we answer the security question before it is asked?",
+  "Could the know-how become a product that sells without our hours?", "Who are the first five firms we could call this week?"],
+ "tests": [
+  {"test": "Call 10 firm owners about their most painful admin task", "success": "At least 6 name the same task", "cost": "Free, 5 hours"},
+  {"test": "Offer a one-month paid pilot to 5 firms", "success": "2 firms pay", "cost": "Free to offer"},
+  {"test": "Publish one before-and-after case study", "success": "3 owners ask for a call", "cost": "Free, one afternoon"}
+ ]
+}

@@ -2,8 +2,9 @@
 
 **Test your business idea before you spend a dollar on it.**
 
-Fifteen Claude skills that take a business idea from the first founder questions
-to a gated, actionable business plan. Free, MIT, no signup, no API key, nothing
+Sixteen Claude skills that take a business idea from the first founder questions
+to a gated, actionable business plan, plus **Launchproof Light** for a quick
+assessment and a brainstorm deck. Free, MIT, no signup, no API key, nothing
 to connect.
 
 `skills/launchproof` `skills/launchproof-fit` `skills/launchproof-score`
@@ -12,6 +13,7 @@ to connect.
 `skills/launchproof-pricing` `skills/launchproof-offer` `skills/launchproof-cfo`
 `skills/launchproof-marketing` `skills/launchproof-brand` `skills/launchproof-ops`
 `skills/launchproof-launch` `skills/launchproof-blueprint`
+`skills/launchproof-light`
 
 Most new businesses fail for reasons that were visible before day one: no real
 need, the wrong founder for the job, a crowded market, margins that never
@@ -100,7 +102,31 @@ The tools need Python 3.8 or newer. Nothing to pip install.
 `/launchproof` runs the whole journey and stops at every gate. Each stage is
 also its own skill you can run alone.
 
-## The fifteen
+## Launchproof Light: the quick version
+
+No time for the full journey? `/launchproof-light` gives a fast, to-the-point
+read on an idea and a PowerPoint deck to put in front of your team.
+
+```
+/launchproof-light A subscription service that delivers fresh pet food to busy dog owners in Taipei
+```
+
+1. **You type the idea.** No interview. Anything missing (price, customer) is
+   assumed and listed on the deck.
+2. **Eight agents run at once:** the five board members (with real quotes, word
+   for word from the quote bank), a red team, eight simulated buyers, and a
+   market scan of real competitors with sources.
+3. **A computed quick verdict:** Go, Go with conditions, or Rethink, from the
+   board's scores and votes, never written by hand.
+4. **An 11-slide brainstorm deck** (`launchproof-light/brainstorm.pptx`): the
+   verdict, the board's votes and recommendations, what is strong and what could
+   kill it, customer objections, the market and the gap, six questions for the
+   team, and three cheap tests for this week.
+
+It takes a few minutes. When the team wants to go deeper, run the full
+`/launchproof`.
+
+## The sixteen
 
 | command | job | what it does |
 | --- | --- | --- |
@@ -118,6 +144,7 @@ also its own skill you can run alone.
 | `/launchproof-brand` | Brand Designer | Name candidates with the trademark, domain and handle checks, a voice, a promise and a brief for the look. |
 | `/launchproof-ops` | Operations Manager | Suppliers, staffing, routines, tools, permits, the value chain and a risk register, feeding real costs back to the CFO. |
 | `/launchproof-launch` | Launch Lead | The cheapest real-world test first, with a success line written in advance, then the countdown, launch day and the first 30 days. |
+| `/launchproof-light` | Quick Assessment | One idea in, eight agents at once (board, red team, buyers, market), a computed verdict and an 11-slide PowerPoint deck for a team brainstorm. |
 | `/launchproof-blueprint` | Business Planner | The 14-step Startup Blueprint: the four gates, your checklist, the Business Model Canvas, growth and team plans, the full eight-section business plan, a lean plan and the action plan for your next gate. |
 
 ## The board
@@ -222,7 +249,7 @@ research.
 
 ## The tools
 
-Seven of them, all standard-library Python. None touch the network.
+Eight of them, all standard-library Python. None touch the network.
 
 ```bash
 python3 skills/launchproof-score/evaluator.py import ideagauge-export.json > launchproof/score.json
@@ -232,6 +259,7 @@ python3 skills/launchproof-consumer/panel.py init --customer launchproof/custome
 python3 skills/launchproof-pricing/van_westendorp.py launchproof/panel/answers --price 2500
 python3 skills/launchproof-cfo/unit_economics.py launchproof/numbers.json --out launchproof/cfo.md
 python3 skills/launchproof-blueprint/blueprint.py --dir launchproof --check
+python3 skills/launchproof-light/deck.py skills/launchproof-light/example.deck.json --out brainstorm.pptx
 ```
 
 **`evaluator.py`** scores an idea the IdeaGauge way, from the app's export, a list
@@ -244,7 +272,9 @@ answers per buyer into the acceptable price range. **`unit_economics.py`**
 reports contribution, break-even, margin, year 1, cash needed and payback, every
 number traced to an input. **`blueprint.py`** computes the 14 steps and four
 gates, keeps your checklist ticks, and compiles the business plan and the action
-plan.
+plan. **`deck.py`** computes Launchproof Light's quick verdict, checks every board
+quote against the quote bank, and writes the brainstorm deck as a PowerPoint file
+with no libraries needed.
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -299,6 +329,7 @@ skills/launchproof-brand/        SKILL.md
 skills/launchproof-ops/          SKILL.md
 skills/launchproof-launch/       SKILL.md
 skills/launchproof-blueprint/    SKILL.md, blueprint.py, steps.json
+skills/launchproof-light/        SKILL.md, deck.py, example.deck.json, lenses.md, quotes.md
 tests/                           the tests for every tool
 ```
 
