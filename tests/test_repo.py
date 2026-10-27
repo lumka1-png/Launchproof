@@ -88,7 +88,8 @@ class Repo(unittest.TestCase):
         self.assertNotIn("Jobs", lenses)
 
     def test_examples_parse(self):
-        for rel in ("launchproof-cfo/example.json", "launchproof-consumer/customer.example.json",
+        for rel in ("launchproof-cfo/example.json", "launchproof-cfo/example-ai-consulting.json",
+                    "launchproof-consumer/customer.example.json",
                     "launchproof-score/criteria.json", "launchproof-blueprint/steps.json"):
             with open(os.path.join(SKILLS_DIR, rel), encoding="utf-8") as fh:
                 json.load(fh)

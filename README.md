@@ -94,7 +94,7 @@ The tools need Python 3.8 or newer. Nothing to pip install.
 ## Start here
 
 ```
-/launchproof I want to open a matcha bar for office workers in downtown Toronto
+/launchproof I want to start a freelance AI automation and consulting business for small accounting firms
 ```
 
 `/launchproof` runs the whole journey and stops at every gate. Each stage is
@@ -172,29 +172,44 @@ step; Launchproof does the work and keeps the score.
 
 ## An example
 
-A matcha bar in Toronto, iced matcha lattes at $6.50 a cup. This walk-through is
+A freelance AI automation and consulting business: a solo founder builds AI
+workflows (client intake, document processing, follow-up emails) for small
+accounting firms, sold as a $2,500 monthly retainer. This walk-through is
 illustrative: the CFO numbers come from the example file in this repo
-(`skills/launchproof-cfo/example.json`), so you can run the tools on them; the
-other results are invented to show how the gates work, not research on Toronto.
+(`skills/launchproof-cfo/example-ai-consulting.json`), so you can run the tools
+on them; the other results are invented to show how the gates work, not market
+research.
 
-1. **Fit and score.** Six years as a barista manager, 12 problem conversations,
-   9 months of personal runway. IdeaGauge: 66, Workable. After checking, "It
-   can't be copied" drops from 70 to 35 (anyone can open a matcha bar next door).
-2. **Board and red team.** 3 fund if, 1 fund, 1 pass. Kill criterion: fewer than
-   50 pre-orders in two weeks. The red team's worst threat: a coffee chain adds
-   matcha at $5.25 (2, critical); the defense (a loyalty card and a ceremonial
-   grade the chains don't stock) moves it to 4. **Gate 1 passes:** spend on research only.
-3. **Competitors and panel.** Four matcha bars and eleven coffee shops in walking
-   distance; rivalry and substitutes are high, and nobody does fast pre-ordering.
-   40 of 100 simulated buyers buy. **Gate 2 passes:** spend a small test budget.
-4. **Price, CFO, real test.** Each cup leaves $4.76 after its own costs,
-   break-even is 186 cups a day, the margin at the planned 383 cups is 38%, year
-   1 makes $93,926 on operations, and the founder needs $34,092 before it pays
-   for itself. A two-week pre-order page gets 63 orders against a line of 50.
-   **Gate 3 passes:** now sign the lease.
-5. **Launch and plan.** Gate 4 checks the company is registered, the funnel and
-   launch are planned, the team is planned, and the cash on hand covers $51,138
-   (the CFO's figure times 1.5, the planning-fallacy safety factor from Step 3).
+1. **Fit and score.** Eight years as an operations manager at an accounting
+   firm, self-taught in automation tools, 11 problem conversations with firm
+   owners, 8 months of personal runway. IdeaGauge: 68, Workable. After
+   checking, "It can't be copied" drops from 45 to 30 (any freelancer can learn
+   the same tools) and "Do I solve a need?" from 75 to 55 (owners complain about
+   admin hours, but nobody has paid yet). Still 67, still Workable.
+2. **Board and red team.** 3 fund if, 1 fund, 1 pass. The Leverage lens warns
+   that a pure hours business is a job, not an asset; the Demand lens asks for a
+   niche where the founder is a known name. Kill criterion: fewer than 2 paid
+   pilots from 30 discovery calls. The red team's worst threat: the firms'
+   accounting software ships the same automations built in (2, critical); the
+   defense (specialize in the workflows between tools, which no single vendor
+   owns, and sell outcomes, not setups) moves it to 4. **Gate 1 passes:** spend
+   on research only.
+3. **Competitors and panel.** Generalist automation agencies, freelancers on
+   marketplaces and do-it-yourself tools; rivalry and substitutes are high, but
+   nobody specializes in small accounting firms. 34 of 100 simulated firm owners
+   buy; the top objection is data security. **Gate 2 passes:** spend a small test
+   budget.
+4. **Price, CFO, real test.** Each client-month leaves $1,785 after its own costs
+   (AI usage, platform seats, contractor hours, fees), break-even is 3 clients,
+   the margin at the planned 8 clients is 46%, year 1 makes $40,545 on top of
+   the founder's $4,000 monthly draw, the $5,100 startup spend is earned back in
+   month 7, and the founder needs $9,945 before it pays for itself. A paid pilot
+   offer gets 3 firms signed against a line of 2. **Gate 3 passes:** now build
+   the website and the service package.
+5. **Launch and plan.** Gate 4 checks the business is registered with contracts
+   and a data-protection policy in place, the funnel and launch are planned, the
+   first contractor is planned, and the cash on hand covers $14,918 (the CFO's
+   figure times 1.5, the planning-fallacy safety factor from Step 3).
 
 ## The tools
 
@@ -205,7 +220,7 @@ python3 skills/launchproof-score/evaluator.py import ideagauge-export.json > lau
 python3 skills/launchproof-score/evaluator.py score launchproof/score.json --out launchproof/score.md
 python3 skills/launchproof-redteam/threats.py launchproof/threats.json --out launchproof/redteam.md
 python3 skills/launchproof-consumer/panel.py init --customer launchproof/customer.json --pitch launchproof/pitch.md
-python3 skills/launchproof-pricing/van_westendorp.py launchproof/panel/answers --price 6.50
+python3 skills/launchproof-pricing/van_westendorp.py launchproof/panel/answers --price 2500
 python3 skills/launchproof-cfo/unit_economics.py launchproof/numbers.json --out launchproof/cfo.md
 python3 skills/launchproof-blueprint/blueprint.py --dir launchproof --check
 ```
@@ -267,7 +282,7 @@ skills/launchproof-competitors/  SKILL.md
 skills/launchproof-consumer/     SKILL.md, panel.py, customer.example.json, pitch.example.md
 skills/launchproof-pricing/      SKILL.md, van_westendorp.py
 skills/launchproof-offer/        SKILL.md
-skills/launchproof-cfo/          SKILL.md, unit_economics.py, example.json
+skills/launchproof-cfo/          SKILL.md, unit_economics.py, example.json, example-ai-consulting.json
 skills/launchproof-marketing/    SKILL.md
 skills/launchproof-brand/        SKILL.md
 skills/launchproof-ops/          SKILL.md

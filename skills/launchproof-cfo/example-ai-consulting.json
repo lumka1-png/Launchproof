@@ -1,0 +1,29 @@
+{
+  "business": "Northlight Automation (an example: a freelance AI automation and consulting business)",
+  "unit": "client-month",
+  "price": 2500,
+  "variable": [
+    {"label": "AI model and API usage", "cost": 180},
+    {"label": "Automation platform seats", "cost": 60},
+    {"label": "Contract developer hours", "cost": 400},
+    {"label": "Payment fees (3%)", "cost": 75}
+  ],
+  "fixed_monthly": [
+    {"label": "Founder draw", "cost": 4000},
+    {"label": "Software and subscriptions", "cost": 300},
+    {"label": "Marketing and content", "cost": 500},
+    {"label": "Insurance", "cost": 150},
+    {"label": "Bookkeeping", "cost": 150}
+  ],
+  "startup": [
+    {"label": "Laptop and software setup", "cost": 1500},
+    {"label": "Website and brand", "cost": 1200},
+    {"label": "Registration and contracts", "cost": 600},
+    {"label": "Courses and certifications", "cost": 800},
+    {"label": "Launch marketing", "cost": 1000}
+  ],
+  "days_per_month": 1,
+  "capacity_per_day": 10,
+  "plan_per_day": 8,
+  "ramp_per_day": [1, 2, 3, 3, 4, 5, 5, 6, 6, 7, 7, 8]
+}
