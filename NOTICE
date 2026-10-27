@@ -1,0 +1,22 @@
+Launchproof
+Copyright (c) 2026 Derick van Vuren
+
+This product includes software from the Founder skill
+(https://github.com/Jakeschincariol/founder-skill),
+Copyright (c) 2026 Jake Schincariol, licensed under the MIT License.
+
+The 14-step structure, step questions and checklists in
+skills/launchproof-blueprint/steps.json are condensed from
+"The Startup Blueprint: 14 Steps to Building Your Dream Business"
+(2nd edition, 2025), Copyright (c) 2025 Derick van Vuren, and are included
+in this repository under the MIT License by the author. The book itself is
+not included and remains All Rights Reserved.
+
+The criteria model in skills/launchproof-score/criteria.json is generated from
+IdeaGauge, the Business Idea Evaluator, Copyright (c) Derick van Vuren, and is
+included under the MIT License by the author.
+
+The board lenses are summaries, in our own words, of ideas published by
+Alex Hormozi, Peter Thiel and Blake Masters, Daniel Priestley, Naval Ravikant
+(as collected by Eric Jorgenson) and Charlie Munger (as edited by Peter
+Kaufman). This project is not affiliated with or endorsed by any of them.

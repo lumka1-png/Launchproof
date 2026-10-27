@@ -1,0 +1,172 @@
+{
+  "source": "The 14 steps and checklists are condensed from The Startup Blueprint: 14 Steps to Building Your Dream Business (2nd ed., 2025) by Derick van Vuren.",
+  "gates": [
+    {"n": 1, "name": "Worth testing", "steps": [1, 2, 3],
+     "spend": "Research only: customer interviews, a survey tool, the simulated panel. No product, no lease, no inventory.",
+     "question": "Is this a real opportunity, for this founder, that survives a pre-mortem?"},
+    {"n": 2, "name": "Worth a real-world test", "steps": [5, 6, 7, 8],
+     "spend": "A small test budget: a landing page, a pop-up, a pre-order page, a few paid ads. Nothing you cannot afford to lose.",
+     "question": "Do we know who buys, why, and where the gap is?"},
+    {"n": 3, "name": "Worth building", "steps": [9, 10, 11],
+     "spend": "The startup budget: equipment, build-out, inventory, product development.",
+     "question": "Does every unit make money, does year 1 work, and did real buyers confirm it?"},
+    {"n": 4, "name": "Ready to launch and grow", "steps": [4, 12, 13, 14],
+     "spend": "Launch, legal registration, trademarks, hiring, growth spend.",
+     "question": "Is the company set up, the sales engine ready, the cash sufficient and the team planned?"}
+  ],
+  "steps": [
+    {"n": 1, "title": "The Idea", "gate": 1, "files": ["score.md"], "skill": "launchproof-score",
+     "question": "Is this an idea or an opportunity?",
+     "checks": ["score_gate", "problem_conversations"],
+     "items": [
+       {"id": "1.1", "text": "Write a one-paragraph problem statement: the problem, who has it, how often, how badly", "must": true},
+       {"id": "1.2", "text": "Validate the problem in conversations with 10 or more potential customers (not friends or family)", "must": true},
+       {"id": "1.3", "text": "Document the pain points and the solutions customers use today", "must": true},
+       {"id": "1.4", "text": "Decide whether it is a must-have or a nice-to-have, with the evidence", "must": false},
+       {"id": "1.5", "text": "Name the trends or changes that make now the right time", "must": false},
+       {"id": "1.6", "text": "List your key assumptions about the market and the customers", "must": true},
+       {"id": "1.7", "text": "Write a first vision statement for the venture", "must": false}
+     ]},
+    {"n": 2, "title": "The Entrepreneur", "gate": 1, "files": ["fit.md"], "skill": "launchproof-fit",
+     "question": "Are you the right founder for this, and are you ready?",
+     "checks": ["fit_profile", "founder_group", "personal_runway"],
+     "items": [
+       {"id": "2.1", "text": "Complete the founder profile: entrepreneur type, strengths and weaknesses", "must": true},
+       {"id": "2.2", "text": "List the skills this business needs and mark the gaps", "must": true},
+       {"id": "2.3", "text": "Plan each gap: learn it, partner for it, or hire it", "must": true},
+       {"id": "2.4", "text": "Find at least one mentor in this industry", "must": false},
+       {"id": "2.5", "text": "Confirm your family or partner supports the plan", "must": true},
+       {"id": "2.6", "text": "Know your personal runway: months of living costs covered", "must": true},
+       {"id": "2.7", "text": "Set boundaries between personal and business life, and a plan for stress", "must": false}
+     ]},
+    {"n": 3, "title": "Prepare to Reach Success: Mind Games", "gate": 1, "files": ["board.md", "redteam.md"],
+     "skill": "launchproof-board",
+     "question": "Have outsiders tested your thinking, and do you know when you would stop?",
+     "checks": ["board_vote", "redteam_gate", "kill_criteria"],
+     "items": [
+       {"id": "3.1", "text": "Name the two or three biases most likely to fool you, each with a countermeasure", "must": true},
+       {"id": "3.2", "text": "Run a pre-mortem: the board and the red team", "must": true},
+       {"id": "3.3", "text": "Write kill criteria before any test: the results that mean stop or pivot", "must": true},
+       {"id": "3.4", "text": "Set SMART goals and quarterly milestones", "must": true},
+       {"id": "3.5", "text": "Choose the KPIs you will review every month", "must": false},
+       {"id": "3.6", "text": "Set up accountability: a mentor, peer or advisor you report to every month", "must": false}
+     ]},
+    {"n": 4, "title": "Laying the Foundation: Legal Form, Naming and Branding", "gate": 4, "files": ["brand.md"],
+     "skill": "launchproof-brand",
+     "question": "Is the company set up properly, and is the name yours to use?",
+     "checks": ["brand_file"],
+     "items": [
+       {"id": "4.1", "text": "Shortlist names and run the free checks: trademark register, domain, social handles", "must": true},
+       {"id": "4.2", "text": "Choose the legal structure with an accountant or lawyer in your country", "must": true},
+       {"id": "4.3", "text": "Register the business and the name (after Gate 3)", "must": true},
+       {"id": "4.4", "text": "Open a business bank account and set up bookkeeping", "must": true},
+       {"id": "4.5", "text": "Get the licenses, permits and insurance this business needs", "must": true},
+       {"id": "4.6", "text": "Basic brand: logo, colors, a simple website or landing page, consistent messaging", "must": false},
+       {"id": "4.7", "text": "Basic contracts, terms, and a privacy policy if you collect customer data", "must": false}
+     ]},
+    {"n": 5, "title": "Create Your Value Proposition", "gate": 2, "files": ["value-proposition.md", "offer.md"],
+     "skill": "launchproof-consumer",
+     "question": "Why should someone buy from you?",
+     "checks": ["value_prop"],
+     "items": [
+       {"id": "5.1", "text": "Complete the Value Proposition Canvas: jobs, pains, gains, and how you relieve and create them", "must": true},
+       {"id": "5.2", "text": "Write the value proposition statement in one sentence you can say from memory", "must": true},
+       {"id": "5.3", "text": "Test the statement with real target customers and refine it", "must": true},
+       {"id": "5.4", "text": "Check it is clear, relevant, unique and credible", "must": false}
+     ]},
+    {"n": 6, "title": "Find Your Customers", "gate": 2, "files": ["panel/results.md"], "skill": "launchproof-consumer",
+     "question": "Who exactly buys, and have you heard it from them?",
+     "checks": ["panel_buy_rate", "customer_interviews"],
+     "items": [
+       {"id": "6.1", "text": "Hold 20 or more customer interviews about past behavior, not opinions", "must": true},
+       {"id": "6.2", "text": "Build a customer avatar from the research, one per major segment", "must": true},
+       {"id": "6.3", "text": "Map the customer journey from awareness to purchase", "must": false},
+       {"id": "6.4", "text": "Estimate TAM, SAM and SOM with the sources", "must": true},
+       {"id": "6.5", "text": "Collect a demand signal: a waitlist, signups, deposits or pre-sales", "must": true},
+       {"id": "6.6", "text": "Decide how you will keep customers: onboarding, support, loyalty", "must": false}
+     ]},
+    {"n": 7, "title": "Do Market Segmentation", "gate": 2, "files": ["panel/results.md", "marketing.md"],
+     "skill": "launchproof-marketing",
+     "question": "Which segment do you serve first?",
+     "checks": ["segments"],
+     "items": [
+       {"id": "7.1", "text": "Segment the market: demographic, psychographic, behavioral and needs-based (firmographic for B2B)", "must": true},
+       {"id": "7.2", "text": "Check each segment is measurable, accessible, substantial, actionable and distinct", "must": false},
+       {"id": "7.3", "text": "Choose ONE primary segment to start with, and say why", "must": true},
+       {"id": "7.4", "text": "Write the message for the primary segment", "must": false}
+     ]},
+    {"n": 8, "title": "Understand Competition Using Porter's 5 Forces", "gate": 2, "files": ["competitors.md"],
+     "skill": "launchproof-competitors",
+     "question": "Is the industry attractive, and where is the gap?",
+     "checks": ["five_forces"],
+     "items": [
+       {"id": "8.1", "text": "Identify the top 3 to 5 direct competitors and the indirect ones and substitutes", "must": true},
+       {"id": "8.2", "text": "Rate all five forces with evidence", "must": true},
+       {"id": "8.3", "text": "Write a strategic response to every high force", "must": true},
+       {"id": "8.4", "text": "Set up competitor monitoring (alerts, a monthly check of prices and reviews)", "must": false}
+     ]},
+    {"n": 9, "title": "Determine Your Price", "gate": 3, "files": ["pricing.md"], "skill": "launchproof-pricing",
+     "question": "Is the price set on purpose, and will buyers pay it?",
+     "checks": ["price_in_range"],
+     "items": [
+       {"id": "9.1", "text": "Choose the positioning strategy and the pricing method (never a random guess)", "must": true},
+       {"id": "9.2", "text": "Research competitor prices for the same job, like for like", "must": true},
+       {"id": "9.3", "text": "Know the lowest price that still covers each unit's cost", "must": true},
+       {"id": "9.4", "text": "Test price sensitivity with real buyers (two prices, a pre-sale, a survey)", "must": true},
+       {"id": "9.5", "text": "Plan how the price evolves as you add features or scale", "must": false}
+     ]},
+    {"n": 10, "title": "Know Your Value Chain", "gate": 3, "files": ["ops.md"], "skill": "launchproof-ops",
+     "question": "Can you deliver the promise at a profit, every time?",
+     "checks": ["ops_file", "contribution"],
+     "items": [
+       {"id": "10.1", "text": "Map the primary and support activities", "must": true},
+       {"id": "10.2", "text": "Cost every activity and name the value it creates", "must": true},
+       {"id": "10.3", "text": "Decide what to strengthen, optimize, outsource or cut", "must": false},
+       {"id": "10.4", "text": "Get real quotes for the main inputs from at least two suppliers", "must": true}
+     ]},
+    {"n": 11, "title": "Design Your Business Model and Write Your Business Plan", "gate": 3,
+     "files": ["business-model-canvas.md", "cfo.md"], "skill": "launchproof-cfo",
+     "question": "Do the numbers work, and did real buyers confirm the model?",
+     "checks": ["year1_profit", "breakeven_capacity", "canvas", "real_test"],
+     "items": [
+       {"id": "11.1", "text": "Fill in all nine blocks of the Business Model Canvas", "must": true},
+       {"id": "11.2", "text": "Test the riskiest assumption with real customers (the real-world test)", "must": true},
+       {"id": "11.3", "text": "Build the financial model: year 1 by month, break-even, cash needed", "must": true},
+       {"id": "11.4", "text": "Know CAC, lifetime value and payback", "must": false},
+       {"id": "11.5", "text": "Run best, expected and worst cases", "must": true},
+       {"id": "11.6", "text": "Write the lean plan (1 to 2 pages) and the full plan", "must": true}
+     ]},
+    {"n": 12, "title": "Sell Your Product", "gate": 4, "files": ["marketing.md", "launch.md"], "skill": "launchproof-marketing",
+     "question": "Is there a repeatable way to turn strangers into customers?",
+     "checks": ["marketing_file", "launch_file"],
+     "items": [
+       {"id": "12.1", "text": "Define the sales funnel: awareness, interest, decision, purchase, loyalty", "must": true},
+       {"id": "12.2", "text": "Pick one or two channels where the primary segment spends attention", "must": true},
+       {"id": "12.3", "text": "Write the sales script and the objection answers", "must": true},
+       {"id": "12.4", "text": "Set up tracking: leads, conversion, cost per customer (a spreadsheet is fine)", "must": true},
+       {"id": "12.5", "text": "Plan the launch campaign with dates", "must": false},
+       {"id": "12.6", "text": "Test products, systems and support before launch day", "must": true}
+     ]},
+    {"n": 13, "title": "Grow Your Business: Bootstrap, Game Theory, Scaling", "gate": 4, "files": ["growth.md"],
+     "skill": "launchproof-blueprint",
+     "question": "Is there enough cash, and a plan for how to grow?",
+     "checks": ["runway"],
+     "items": [
+       {"id": "13.1", "text": "Choose the funding path: bootstrap, friends and family, loan, angels or venture capital", "must": true},
+       {"id": "13.2", "text": "Know your burn rate and runway, and review them monthly", "must": true},
+       {"id": "13.3", "text": "Map how the main competitor will react to your launch and your price (a game tree)", "must": false},
+       {"id": "13.4", "text": "Decide whether you are growing (costs rise with revenue) or scaling (they do not)", "must": false},
+       {"id": "13.5", "text": "Document the key processes so someone else could run them", "must": false}
+     ]},
+    {"n": 14, "title": "Build Your Team", "gate": 4, "files": ["team.md"], "skill": "launchproof-blueprint",
+     "question": "Who do you need, when, and how will you pay them?",
+     "checks": ["team_file"],
+     "items": [
+       {"id": "14.1", "text": "Define the first roles that complement your skills (technical, growth, operations)", "must": true},
+       {"id": "14.2", "text": "Write the company values before the first hire", "must": true},
+       {"id": "14.3", "text": "Set the compensation approach, including any equity", "must": false},
+       {"id": "14.4", "text": "Plan a structured interview process and onboarding", "must": false},
+       {"id": "14.5", "text": "Plan the team for the next 12 to 24 months", "must": false}
+     ]}
+  ]
+}

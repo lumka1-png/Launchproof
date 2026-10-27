@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "launchproof",
+  "description": "Launchproof: test a business idea before you spend on it",
+  "owner": {
+    "name": "Derick van Vuren",
+    "url": "https://takeacourse.online"
+  },
+  "plugins": [
+    {
+      "name": "launchproof",
+      "description": "Fifteen Claude skills that take a business idea from the first founder questions to a gated business plan: founder fit, the IdeaGauge score, a five-member board, a red team, competitors, a 100-buyer simulated panel, pricing, the offer, a CFO, marketing, brand, operations, a real-world test and the 14-step Startup Blueprint.",
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/lumka1-png/launchproof"
+    }
+  ]
+}

@@ -1,0 +1,456 @@
+{
+ "source": "IdeaGauge, the Business Idea Evaluator by Derick van Vuren (takeacourse.online), built on The Startup Blueprint (2nd ed., 2025). Generated from the app's own criteria model.",
+ "scale": "0 to 100 per criterion; 0 is bad or low, 100 is good or high. Every criterion is worded so that higher is better.",
+ "weights": {
+  "1": "supporting",
+  "2": "important",
+  "3": "critical"
+ },
+ "sections": {
+  "biz": {
+   "title": "Business Analysis",
+   "sub": "How strong is the opportunity itself?"
+  },
+  "me": {
+   "title": "Personal Fit",
+   "sub": "The idea matters, but so does the founder. Be honest."
+  },
+  "own": {
+   "title": "Your Own Criteria",
+   "sub": "Your goals, your rules. Adjust the defaults or add what matters to you."
+  }
+ },
+ "pass": {
+  "overall": 60,
+  "biz": 55,
+  "me": 50,
+  "strong": 75
+ },
+ "radar": [
+  {
+   "name": "Demand",
+   "keys": [
+    "problem",
+    "need",
+    "benefit",
+    "delight",
+    "valuable"
+   ]
+  },
+  {
+   "name": "Moat",
+   "keys": [
+    "advantage",
+    "rare",
+    "noCopy",
+    "noSub",
+    "betterValue"
+   ]
+  },
+  {
+   "name": "Market",
+   "keys": [
+    "crowded",
+    "ocean",
+    "barrier",
+    "novel"
+   ]
+  },
+  {
+   "name": "Economics",
+   "keys": [
+    "scalable",
+    "income",
+    "revenue",
+    "custBase",
+    "simple"
+   ]
+  },
+  {
+   "name": "Founder fit",
+   "keys": [
+    "passion",
+    "interest",
+    "personality",
+    "expertise",
+    "knowledge",
+    "effect"
+   ]
+  },
+  {
+   "name": "Execution",
+   "keys": [
+    "execute",
+    "resources",
+    "network",
+    "acquire",
+    "goals",
+    "failure",
+    "support",
+    "obvious"
+   ]
+  }
+ ],
+ "criteria": [
+  {
+   "n": 1,
+   "key": "novel",
+   "sec": "biz",
+   "w": 1,
+   "q": "Has it been done before?",
+   "lo": "Done to death",
+   "hi": "Brand new",
+   "help": "Newer = higher score. Novelty helps, but execution beats novelty. That's why this weighs ×1."
+  },
+  {
+   "n": 2,
+   "key": "valuable",
+   "sec": "biz",
+   "w": 3,
+   "q": "Does it do things in a more valuable way?",
+   "lo": "No",
+   "hi": "Much better",
+   "help": "Even old ideas win when they deliver clearly more value than what exists today."
+  },
+  {
+   "n": 3,
+   "key": "problem",
+   "sec": "biz",
+   "w": 3,
+   "q": "Do I solve a problem?",
+   "lo": "No pain",
+   "hi": "Real pain",
+   "help": "Painkillers beat vitamins. The #1 startup killer is building something nobody needs."
+  },
+  {
+   "n": 4,
+   "key": "delight",
+   "sec": "biz",
+   "w": 2,
+   "q": "Do I create delight?",
+   "lo": "Meh",
+   "hi": "They'll love it",
+   "help": "Delight drives word-of-mouth and retention."
+  },
+  {
+   "n": 5,
+   "key": "benefit",
+   "sec": "biz",
+   "w": 2,
+   "q": "Do I give a benefit?",
+   "lo": "Unclear",
+   "hi": "Obvious benefit",
+   "help": "Can a customer state the benefit in one sentence?"
+  },
+  {
+   "n": 6,
+   "key": "advantage",
+   "sec": "biz",
+   "w": 3,
+   "q": "Can I have a competitive advantage?",
+   "lo": "None",
+   "hi": "Strong edge",
+   "help": "Your unfair advantage: distribution, technology, brand, cost, or insight."
+  },
+  {
+   "n": 7,
+   "key": "crowded",
+   "sec": "biz",
+   "w": 2,
+   "q": "Is the space crowded?",
+   "lo": "Crowded",
+   "hi": "Wide open",
+   "help": "More crowded = lower score. Some competition validates demand; a stampede kills margins."
+  },
+  {
+   "n": 8,
+   "key": "betterValue",
+   "sec": "biz",
+   "w": 3,
+   "q": "Does it have better value than rivals?",
+   "lo": "Worse",
+   "hi": "Clearly better",
+   "help": "Why would anyone switch to you? Better, cheaper, faster, or nicer. Pick at least one."
+  },
+  {
+   "n": 9,
+   "key": "rare",
+   "sec": "biz",
+   "w": 1,
+   "q": "Is it rare?",
+   "lo": "Common",
+   "hi": "Rare",
+   "help": "Rarer = higher score. Rarity supports pricing power."
+  },
+  {
+   "n": 10,
+   "key": "noCopy",
+   "sec": "biz",
+   "w": 2,
+   "q": "It can't be copied",
+   "lo": "Easily copied",
+   "hi": "Hard to copy",
+   "help": "Easily copied = lower score. Think patents, network effects, switching costs, know-how."
+  },
+  {
+   "n": 11,
+   "key": "noSub",
+   "sec": "biz",
+   "w": 2,
+   "q": "It can't be substituted",
+   "lo": "Easily swapped",
+   "hi": "No substitute",
+   "help": "Easily substituted = lower score. What else solves the same job for your customer?"
+  },
+  {
+   "n": 12,
+   "key": "need",
+   "sec": "biz",
+   "w": 3,
+   "q": "Do I solve a need?",
+   "lo": "Want",
+   "hi": "Deep need",
+   "help": "Needs survive recessions; wants don't. Must-have beats nice-to-have."
+  },
+  {
+   "n": 13,
+   "key": "scalable",
+   "sec": "biz",
+   "w": 2,
+   "q": "Is it scalable?",
+   "lo": "Linear grind",
+   "hi": "Scales fast",
+   "help": "Can revenue grow much faster than costs and headcount?"
+  },
+  {
+   "n": 14,
+   "key": "simple",
+   "sec": "biz",
+   "w": 1,
+   "q": "Is it uncomplicated?",
+   "lo": "Complex",
+   "hi": "Simple",
+   "help": "Simple businesses launch faster and break less."
+  },
+  {
+   "n": 15,
+   "key": "custBase",
+   "sec": "biz",
+   "w": 2,
+   "q": "Predictable customer base?",
+   "lo": "Unpredictable",
+   "hi": "Predictable",
+   "help": "Do you know exactly who buys, and can you find more of them repeatably?"
+  },
+  {
+   "n": 16,
+   "key": "revenue",
+   "sec": "biz",
+   "w": 2,
+   "q": "Predictable revenue?",
+   "lo": "Feast & famine",
+   "hi": "Recurring",
+   "help": "Subscriptions and repeat purchases score high; one-off project income scores low."
+  },
+  {
+   "n": 17,
+   "key": "income",
+   "sec": "biz",
+   "w": 3,
+   "q": "High income potential?",
+   "lo": "Small ceiling",
+   "hi": "Big upside",
+   "help": "Is the market big enough to reach your goals? Small ponds cap big dreams."
+  },
+  {
+   "n": 18,
+   "key": "barrier",
+   "sec": "biz",
+   "w": 1,
+   "q": "Does it have a low entry barrier?",
+   "lo": "Low barrier",
+   "hi": "High barrier",
+   "help": "Low barrier = lower score: if it's easy for you to enter, it's easy for everyone."
+  },
+  {
+   "n": 19,
+   "key": "ocean",
+   "sec": "biz",
+   "w": 2,
+   "q": "Blue ocean, or red ocean?",
+   "lo": "Red ocean",
+   "hi": "Blue ocean",
+   "help": "Blue = uncontested new market space (high score). Red = bloody feature wars (low score)."
+  },
+  {
+   "n": 20,
+   "key": "effect",
+   "sec": "me",
+   "w": 1,
+   "q": "Does it apply effectuation?",
+   "lo": "No",
+   "hi": "Fully",
+   "help": "Effectuation = starting from the means you already have: who you are, what you know, who you know."
+  },
+  {
+   "n": 21,
+   "key": "personality",
+   "sec": "me",
+   "w": 2,
+   "q": "Does it fit my personality?",
+   "lo": "Bad fit",
+   "hi": "Perfect fit",
+   "help": "A great idea that fights your nature will exhaust you."
+  },
+  {
+   "n": 22,
+   "key": "interest",
+   "sec": "me",
+   "w": 2,
+   "q": "Am I interested in this?",
+   "lo": "Not really",
+   "hi": "Fascinated",
+   "help": "You'll spend thousands of hours here. Interest is fuel."
+  },
+  {
+   "n": 23,
+   "key": "passion",
+   "sec": "me",
+   "w": 3,
+   "q": "Do I have passion for this?",
+   "lo": "None",
+   "hi": "Burning",
+   "help": "Passion is what survives the third bad month. Investors and customers can feel it."
+  },
+  {
+   "n": 24,
+   "key": "expertise",
+   "sec": "me",
+   "w": 2,
+   "q": "Do I have the expertise?",
+   "lo": "Novice",
+   "hi": "Expert",
+   "help": "Domain expertise shortens your learning curve dramatically."
+  },
+  {
+   "n": 25,
+   "key": "knowledge",
+   "sec": "me",
+   "w": 2,
+   "q": "Do I have knowledge?",
+   "lo": "Little",
+   "hi": "Deep",
+   "help": "Market, customer and industry knowledge. Do you know this world?"
+  },
+  {
+   "n": 26,
+   "key": "acquire",
+   "sec": "me",
+   "w": 1,
+   "q": "Can expertise be acquired?",
+   "lo": "Hardly",
+   "hi": "Easily",
+   "help": "If you lack expertise today, how fast can you learn it or hire it?"
+  },
+  {
+   "n": 27,
+   "key": "network",
+   "sec": "me",
+   "w": 2,
+   "q": "Can I network in this field?",
+   "lo": "No access",
+   "hi": "Well connected",
+   "help": "Networks bring first customers, advice, and talent."
+  },
+  {
+   "n": 28,
+   "key": "execute",
+   "sec": "me",
+   "w": 3,
+   "q": "Can I execute it?",
+   "lo": "Doubtful",
+   "hi": "Absolutely",
+   "help": "Ideas are worthless without execution. Be brutally honest here."
+  },
+  {
+   "n": 29,
+   "key": "resources",
+   "sec": "me",
+   "w": 3,
+   "q": "Do I have the needed resources?",
+   "lo": "Nothing",
+   "hi": "Everything",
+   "help": "Money, time, tools, people. Underfunding is a top-3 startup killer."
+  },
+  {
+   "n": 30,
+   "key": "obvious",
+   "sec": "me",
+   "w": 1,
+   "q": "That's obvious!",
+   "lo": "Confusing",
+   "hi": "Instantly clear",
+   "help": "The gut check: when you explain it, do people immediately get it?"
+  },
+  {
+   "n": 31,
+   "key": "goals",
+   "sec": "me",
+   "w": 2,
+   "q": "Can I potentially achieve my goals?",
+   "lo": "Unlikely",
+   "hi": "Very likely",
+   "help": "Does this idea actually lead to the life and outcomes you want?"
+  },
+  {
+   "n": 32,
+   "key": "failure",
+   "sec": "me",
+   "w": 2,
+   "q": "What is the probability of failure?",
+   "lo": "Very likely to fail",
+   "hi": "Low risk",
+   "help": "Low probability of failure = high score. Consider the risks you can't control."
+  },
+  {
+   "n": 33,
+   "key": "support",
+   "sec": "me",
+   "w": 1,
+   "q": "Do I have support from family/friends?",
+   "lo": "Alone",
+   "hi": "Full support",
+   "help": "The journey is hard; support systems keep founders going."
+  },
+  {
+   "n": 34,
+   "key": "freedom",
+   "sec": "own",
+   "w": 2,
+   "q": "Do you have personal freedom?",
+   "lo": "Trapped",
+   "hi": "Free",
+   "help": "Does this business give you the lifestyle and autonomy you want?"
+  },
+  {
+   "n": 35,
+   "key": "membership",
+   "sec": "own",
+   "w": 2,
+   "q": "Is it membership based?",
+   "lo": "No",
+   "hi": "Fully",
+   "help": "Memberships create recurring revenue and community."
+  },
+  {
+   "n": 36,
+   "key": "meaningful",
+   "sec": "own",
+   "w": 2,
+   "q": "Is it meaningful for you?",
+   "lo": "Just money",
+   "hi": "Deeply meaningful",
+   "help": "Meaning sustains motivation long after novelty fades."
+  }
+ ]
+}
