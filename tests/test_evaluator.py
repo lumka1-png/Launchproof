@@ -104,5 +104,40 @@ class Import(unittest.TestCase):
         self.assertEqual(spec["scores"]["support"]["self"], 32)
 
 
+class Report(unittest.TestCase):
+    def setUp(self):
+        spec = flat(62)
+        spec["scores"]["ocean"] = {"self": 70, "verified": 40, "note": "red ocean"}
+        spec["custom"] = [{"key": "home", "q": "Can I run it from home?", "w": 2, "self": 80}]
+        self.res = ev.analyse(spec)
+        self.text = ev.report(self.res, chart="score-chart.svg")
+
+    def test_one_table_with_question_numbers_and_no_weights(self):
+        self.assertEqual(self.text.count("| question number |"), 1)
+        self.assertNotRegex(self.text, r"\bx[123]\b")
+        self.assertIn("| 19 | Business Analysis | Blue ocean, or red ocean? | 70 | 40 |", self.text)
+        self.assertIn("Can I run it from home?", self.text)
+
+    def test_charts_terms_and_what_comes_next(self):
+        self.assertIn("█", self.text)
+        self.assertIn("![The six dimensions](score-chart.svg)", self.text)
+        self.assertIn("**Blue ocean or red ocean**", self.text)
+        self.assertIn("**Effectuation**", self.text)
+        self.assertIn("## What happens next", self.text)
+        svg = ev.chart_svg(self.res)
+        self.assertTrue(svg.startswith("<svg") and svg.strip().endswith("</svg>"))
+        self.assertIn("Your scores", svg)
+
+    def test_bar_marks_the_pass_line(self):
+        self.assertEqual(len(ev.bar(55, 60)), ev.BAR + 1)
+        self.assertEqual(ev.bar(100), "█" * ev.BAR)
+
+    def test_five_own_criteria_examples(self):
+        self.assertEqual(CRIT["own_count"], 5)
+        self.assertGreaterEqual(len(CRIT["own_examples"]), 5)
+        for key in CRIT["glossary"]:
+            self.assertIn(key, {c["key"] for c in CRIT["criteria"]})
+
+
 if __name__ == "__main__":
     unittest.main()

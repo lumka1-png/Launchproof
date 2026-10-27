@@ -49,34 +49,51 @@ the others wrote.
 
 ## How to run it
 
-1. **Start with people, not documents.** Open with `/launchproof-fit`: a few short
+1. **Open with the map, in a few lines.** Before the first question, tell the
+   founder what is coming, in plain words:
+   - First, a few questions about you and the idea, then the IdeaGauge score.
+   - **Gate 1, worth testing:** a board of five (the frameworks of Alex Hormozi,
+     Peter Thiel, Daniel Priestley, Naval Ravikant and Charlie Munger) votes, and
+     a red team tries to break the idea. Until then, spend nothing but time.
+   - **Gate 2, worth a real-world test:** competitors, your value proposition and
+     simulated buyers. Then a small test budget.
+   - **Gate 3, worth building:** price, real profit margins, operations and a
+     test with real buyers. Then the startup budget.
+   - **Gate 4, ready to launch:** marketing, brand, launch, growth, team and the
+     14-step business plan.
+   You can stop at any gate; stopping early saves money.
+2. **Start with people, not documents.** Then `/launchproof-fit`: a few short
    questions, two rounds at most. Then `/launchproof-score`.
-2. **After each stage, one short read-out**: the result in one line, what it
+3. **After each stage, one short read-out**: the result in one line, what it
    means, and the next stage. Do not dump whole files into the chat; the files are
    there to read.
-3. **At each gate, stop.** Run `python3
+4. **At each gate, stop.** Run `python3
    "${CLAUDE_SKILL_DIR}/../launchproof-blueprint/blueprint.py" --dir launchproof
    --check`, refresh the checklist with `--checklist`, and show the founder:
    - pass or not, and why, from the tool;
    - what they may now spend on, and what they must NOT spend on yet;
    - the board's kill criteria, and whether any has been hit;
    - the items only they can do (real conversations, the real test, ticking the
-     checklist). Wait for them before going on.
-4. **If a gate fails**, offer the three honest options: rework (the named
+     checklist);
+   - in two lines, what the next gate involves and what it will ask of them.
+   Wait for them before going on.
+5. **If a gate fails**, offer the three honest options: rework (the named
    weakness, then re-check), pivot (the same founder, a nearby problem), or stop.
    Never push past a failed gate. Stopping early is the skill doing its job.
-5. **Before the buyer panel**, say it is about 100 sub-agent calls and offer
+6. **Before the buyer panel**, say it is about 100 sub-agent calls and offer
    `--quick` (20 buyers). With `--quick` on this skill, use the quick mode of the
    board-adjacent skills too: `/launchproof-redteam --quick` and
    `/launchproof-consumer --quick`.
-6. **Gate 3 needs real buyers.** The panel is simulated. Before any startup money,
+7. **Gate 3 needs real buyers.** The panel is simulated. Before any startup money,
    the founder runs the cheapest real test from `/launchproof-launch` Step 1 and
    logs the result in `launchproof/evidence.json`. Help design it, then wait.
 
 ## Rules that hold across the pack
 
-- Board members and lenses are published frameworks, never the people. No quotes,
-  no endorsements.
+- Board members are named ("Charlie Munger's Inversion lens") and apply that
+  person's published framework. Their reasoning is the board's own; quotes come
+  only from `launchproof-board/quotes.md`, word for word, with the source. No
+  invented quotes, no endorsements.
 - No invented facts: competitors, prices, reviews and quotes come from public
   sources with links. Estimates are marked as estimates.
 - The founder owns their self scores, their checklist ticks and their evidence

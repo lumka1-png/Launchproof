@@ -28,7 +28,7 @@ to test for.
     python3 evaluator.py template --idea "Moss Matcha Bar" > launchproof/score.json
     python3 evaluator.py import ideagauge-export.json --idea "Moss" > launchproof/score.json
     python3 evaluator.py from-list "70,80,65,..." --idea "Moss"  # 33 numbers, the app's order
-    python3 evaluator.py score launchproof/score.json --out launchproof/score.md
+    python3 evaluator.py score launchproof/score.json --out launchproof/score.md   # also writes score-chart.svg
     python3 evaluator.py score launchproof/score.json --check     # exit 0 if Gate 1 passes
 
 The input (launchproof/score.json):
@@ -165,43 +165,133 @@ def analyse(spec, crit=None):
     }
 
 
-def report(res, crit=None):
+BAR = 20  # characters in a full bar
+
+
+def bar(score, mark=None):
+    """A text bar for a 0 to 100 score, with an optional pass mark shown as |."""
+    if score is None:
+        return ""
+    filled = js_round(score / 100.0 * BAR)
+    cells = ["█" if i < filled else "░" for i in range(BAR)]
+    if mark is not None:
+        cells.insert(js_round(mark / 100.0 * BAR), "|")
+    return "".join(cells)
+
+
+NEXT = """## What happens next
+
+Launchproof moves through four gates. Each gate says what you may spend money on once it passes, so
+nothing is spent on an idea that has not earned it.
+
+1. **Gate 1, worth testing.** This score, then a board of five (the frameworks of Alex Hormozi, Peter
+   Thiel, Daniel Priestley, Naval Ravikant and Charlie Munger) votes on the idea, and a red team tries to
+   break it. Until it passes, spend nothing but time.
+2. **Gate 2, worth a real-world test.** The competitors, your value proposition, and a panel of
+   simulated buyers who say whether they would buy and why. Then you may spend a small test budget.
+3. **Gate 3, worth building.** The price, the real profit margins, how the business runs, and a test
+   with real buyers that must hit a target set in advance. Then you may spend the startup budget.
+4. **Gate 4, ready to launch.** Marketing, brand, the launch plan, growth, the team, and the full
+   business plan built on the 14 steps of The Startup Blueprint. Then you launch.
+"""
+
+
+def chart_svg(res):
+    """A radar chart of the six dimensions: the founder's scores and the checked scores."""
+    import math as m
+    dims = [n for n, _ in res["checked"]["radar"]]
+    sets = [("Checked", "#FF8001", [v for _, v in res["checked"]["radar"]])]
+    if [v for _, v in res["self"]["radar"]] != sets[0][2]:
+        sets.insert(0, ("Your scores", "#4DA3FF", [v for _, v in res["self"]["radar"]]))
+    cx, cy, r, n = 260, 240, 150, len(dims)
+
+    def pt(i, rad):
+        a = 2 * m.pi * i / n - m.pi / 2
+        return cx + rad * m.cos(a), cy + rad * m.sin(a)
+
+    out = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 500" width="520" height="500" '
+           'font-family="Helvetica, Arial, sans-serif">',
+           '<rect width="520" height="500" fill="#ffffff"/>',
+           '<text x="260" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1d1d1f">%s</text>'
+           % res["idea"].replace("&", "&amp;").replace("<", "&lt;")]
+    for lvl in (25, 50, 75, 100):
+        pts = " ".join("%.1f,%.1f" % pt(i, r * lvl / 100.0) for i in range(n))
+        out.append('<polygon points="%s" fill="none" stroke="#d2d2d7" stroke-width="1"/>' % pts)
+    for i, name in enumerate(dims):
+        x, y = pt(i, r)
+        lx, ly = pt(i, r + 26)
+        out.append('<line x1="%d" y1="%d" x2="%.1f" y2="%.1f" stroke="#d2d2d7"/>' % (cx, cy, x, y))
+        out.append('<text x="%.1f" y="%.1f" text-anchor="middle" dominant-baseline="middle" font-size="13" '
+                   'font-weight="700" fill="#3a3a3c">%s</text>' % (lx, ly, name))
+    for label, color, vals in sets:
+        pts = " ".join("%.1f,%.1f" % pt(i, r * v / 100.0) for i, v in enumerate(vals))
+        out.append('<polygon points="%s" fill="%s" fill-opacity="0.18" stroke="%s" stroke-width="2.5"/>'
+                   % (pts, color, color))
+    for k, (label, color, _) in enumerate(sets):
+        y = 475 - 22 * (len(sets) - 1 - k)
+        out.append('<rect x="170" y="%d" width="14" height="14" rx="3" fill="%s"/>' % (y - 11, color))
+        out.append('<text x="192" y="%d" font-size="13" fill="#3a3a3c">%s</text>' % (y, label))
+    out.append('<text x="330" y="475" font-size="13" font-weight="700" fill="#1d1d1f">Score %d / 100</text>'
+               % res["checked"]["overall"])
+    out.append("</svg>")
+    return "\n".join(out) + "\n"
+
+
+def report(res, crit=None, chart=None):
     crit = crit or load_criteria()
     c, s = res["checked"], res["self"]
+    p = crit["pass"]
     L = ["# %s · IdeaGauge evaluation" % res["idea"], ""]
     if res["pitch"]:
         L += ["_%s_" % res["pitch"], ""]
-    L.append("**Checked score: %d / 100 · %s · Gate 1 %s**" % (
-        c["overall"], c["verdict"], "passes" if c["pass"] else "does not pass"))
+    L.append("**Score: %d / 100 · %s · Gate 1 %s**" % (
+        c["overall"], c["verdict"], "passes" if c["pass"] else "does not pass yet"))
     if c["reasons"]:
         L += [""] + ["- ✗ %s" % t for t in c["reasons"]]
     if s["overall"] != c["overall"] or s["tier"] != c["tier"]:
-        L += ["", "On the founder's own scores the app says %d / 100, %s. After checking: %d, %s. The difference is"
-              " the optimism to test for." % (s["overall"], s["verdict"], c["overall"], c["verdict"])]
-    L += ["", "| | founder's scores | checked |", "| --- | ---: | ---: |"]
-    for k, label in (("overall", "Overall (weighted)"), ("biz", "Business Analysis (pass 55)"),
-                     ("me", "Personal Fit (pass 50)"), ("own", "Your Own Criteria")):
-        L.append("| %s | %s | %s |" % (label, "" if s[k] is None else s[k], "" if c[k] is None else c[k]))
-    L += ["", "| dimension | score |", "| --- | ---: |"] + ["| %s | %d |" % d for d in c["radar"]]
+        L += ["", "Your own scores gave %d (%s). After checking them against the evidence: %d (%s). The"
+              " difference is the optimism to test for." % (s["overall"], s["verdict"], c["overall"], c["verdict"])]
+    L += ["", "## The score at a glance", "", "`|` marks the pass line.", "", "```"]
+    rows = [("Overall", c["overall"], p["overall"]), ("Business Analysis", c["biz"], p["biz"]),
+            ("Personal Fit", c["me"], p["me"]), ("Your own criteria", c["own"], None)]
+    for label, v, mark in rows:
+        if v is not None:
+            L.append("%-18s %s %3d" % (label, bar(v, mark), v))
+    L += ["```", "", "**Six dimensions**", "", "```"]
+    for name, v in c["radar"]:
+        L.append("%-18s %s %3d" % (name, bar(v), v))
+    L += ["```", ""]
+    if chart:
+        L += ["![The six dimensions](%s)" % chart, ""]
     if res["adjusted"]:
-        L += ["", "## Scores changed after checking", "", "| criterion | founder | checked | why |", "| --- | ---: | ---: | --- |"]
+        L += ["## Scores changed after checking", "", "| question | yours | checked | why |", "| --- | ---: | ---: | --- |"]
         for _, q, a, b, note in res["adjusted"]:
             L.append("| %s | %.0f | %.0f | %s |" % (q, a, b, note.replace("|", "/")))
-    L += ["", "## Weakest critical (x3) criteria", ""] + ["- %s: %.0f" % (q, v) for _, q, v in res["weakest_critical"]]
+        L.append("")
+    L += ["## Where to focus", "", "The weakest of the questions that count most:", ""]
+    L += ["- %s: %.0f" % (q, v) for _, q, v in res["weakest_critical"]]
     if res["red"]:
-        L += ["", "## In the red (under 45)", ""] + ["- %s: %.0f" % (q, v) for _, q, v in res["red"]]
-    L += ["", "## Strongest", ""] + ["- %s: %.0f" % (q, v) for _, q, v in res["strongest"]]
-    for sec in ("biz", "me", "own"):
-        rows = [r for r in res["rows"] if r["sec"] == sec]
-        if not rows:
-            continue
-        L += ["", "## %s" % crit["sections"][sec]["title"], "", "| # | criterion | weight | founder | checked |",
-              "| ---: | --- | ---: | ---: | ---: |"]
-        for r in rows:
-            L.append("| %s | %s%s | x%d | %s | %s |" % (
-                r.get("n", ""), r["q"], " (yours)" if r.get("custom") else "", r["w"],
-                "" if r["self"] is None else "%.0f" % r["self"], "" if r["verified"] is None else "%.0f" % r["verified"]))
-    L += ["", "_Scores are judgments, not measurements. They decide what to test first, not whether the business"
+        L += ["", "In the red (under 45):", ""] + ["- %s: %.0f" % (q, v) for _, q, v in res["red"]]
+    L += ["", "Strongest:", ""] + ["- %s: %.0f" % (q, v) for _, q, v in res["strongest"]]
+    L += ["", "## Every question", "", "| question number | section | question | your score | checked | |",
+          "| ---: | --- | --- | ---: | ---: | --- |"]
+    titles = {k: v["title"] for k, v in crit["sections"].items()}
+    own_n = len([r for r in res["rows"] if r["sec"] != "own"])
+    for r in res["rows"]:
+        if r.get("n") and r["sec"] != "own":
+            num = r["n"]
+        else:
+            own_n += 1
+            num = own_n
+        L.append("| %d | %s | %s | %s | %s | `%s` |" % (
+            num, titles[r["sec"]], r["q"], "" if r["self"] is None else "%.0f" % r["self"],
+            "" if r["verified"] is None else "%.0f" % r["verified"], bar(r["used"])))
+    gl = crit.get("glossary") or {}
+    used = [gl[r["key"]] for r in res["rows"] if r["key"] in gl]
+    if used:
+        L += ["", "## Terms used", ""] + ["- **%s**: %s" % (term, text) for term, text in used]
+    L += ["", NEXT.strip(), "",
+          "_Scores are judgments, not measurements. They decide what to test first, not whether the business"
           " will work. Scored with the IdeaGauge model from The Startup Blueprint by Derick van Vuren._"]
     return "\n".join(L) + "\n"
 
@@ -300,13 +390,16 @@ def main(argv=None):
         for t in c["reasons"]:
             print("  ✗ %s" % t)
     else:
-        text = report(res)
         if a.out:
+            chart = os.path.splitext(a.out)[0] + "-chart.svg"
+            with open(chart, "w", encoding="utf-8") as fh:
+                fh.write(chart_svg(res))
+            text = report(res, chart=os.path.basename(chart))
             with open(a.out, "w", encoding="utf-8") as fh:
                 fh.write(text)
             print("Score %d (%s). Wrote %s" % (c["overall"], c["verdict"], a.out))
         else:
-            print(text)
+            print(report(res))
     return 0 if (res["gate_pass"] or not a.check) else 1
 
 

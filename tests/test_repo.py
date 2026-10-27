@@ -87,6 +87,15 @@ class Repo(unittest.TestCase):
         self.assertNotIn("Product lens", lenses)
         self.assertNotIn("Jobs", lenses)
 
+    def test_quote_bank_names_all_five_with_sources(self):
+        with open(os.path.join(SKILLS_DIR, "launchproof-board", "quotes.md"), encoding="utf-8") as fh:
+            bank = fh.read()
+        for person in ("Alex Hormozi", "Peter Thiel", "Daniel Priestley", "Naval Ravikant", "Charlie Munger"):
+            self.assertIn("## %s" % person, bank)
+        for line in bank.splitlines():
+            if line.startswith('- "'):
+                self.assertRegex(line, r'^- ".+".*\d{4}', line)
+
     def test_examples_parse(self):
         for rel in ("launchproof-cfo/example.json", "launchproof-cfo/example-ai-consulting.json",
                     "launchproof-consumer/customer.example.json",

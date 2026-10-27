@@ -26,11 +26,27 @@ take the idea from the conversation.
 
 ## The rule about the five names
 
-The lenses are summaries of **published frameworks**, nothing more. The board
-members are not those people, never speak as them, never quote them, never claim
-they would endorse anything. Write "the Demand lens", never "Daniel Priestley
-says". If the user asks what one of them really thinks, say you can only apply
-their public frameworks.
+Each board seat applies one person's **published framework**:
+
+| seat | person | lens |
+| --- | --- | --- |
+| `offers` | Alex Hormozi | Offers |
+| `monopoly` | Peter Thiel | Monopoly |
+| `demand` | Daniel Priestley | Demand |
+| `leverage` | Naval Ravikant | Leverage |
+| `inversion` | Charlie Munger | Inversion |
+
+Name the seat by the person, so the founder knows whose thinking it is:
+"Charlie Munger's Inversion lens recommends..." The reasoning and the
+recommendation are the board's own, applying that framework; never write them
+as if the person said them, and never claim the person reviewed or endorses
+this business.
+
+**Quotes come only from `quotes.md`** in this folder (`${CLAUDE_SKILL_DIR}/quotes.md`):
+real, published lines, copied word for word with the source. Each member backs
+its main reason and its recommendation with at most one quote each, chosen
+because it fits. Never invent a quote, reword one, or put the board's own words
+inside quotation marks. If no quote in the bank fits, use none.
 
 ## Step 0: the idea file
 
@@ -63,20 +79,27 @@ your own opinion of the idea to it.
 ## Step 2: convene
 
 Launch five sub-agents in ONE message (Agent tool, `subagent_type:
-general-purpose`, one per member), each told: `Read launchproof/board/brief.md
-and launchproof-board's lenses.md (path below), apply ONLY the <lens> lens, and
-write your memo to launchproof/board/<lens>.md.` The lenses are `offers`,
-`monopoly`, `demand`, `leverage` and `inversion`. The lens file is `lenses.md` in
-this skill's folder (`${CLAUDE_SKILL_DIR}/lenses.md`; if that path is not
-expanded, use the base directory Claude Code printed for this skill).
+general-purpose`, one per member), each told: `Read launchproof/board/brief.md,
+launchproof-board's lenses.md and quotes.md (paths below). You hold <person>'s
+seat: apply ONLY the <lens> lens. You may quote <person> only word for word from
+quotes.md, with the source; never invent or reword a quote, and never write your
+own recommendation as their words. Write your memo to launchproof/board/<lens>.md.` The lenses are `offers`,
+`monopoly`, `demand`, `leverage` and `inversion`. The files are `lenses.md` and
+`quotes.md` in this skill's folder (`${CLAUDE_SKILL_DIR}/lenses.md`; if that path
+is not expanded, use the base directory Claude Code printed for this skill).
 
 Each memo, in this shape:
 
 ```markdown
-# <Lens> lens
+# <Person>'s <Lens> lens
 Score: <1-10> | Vote: FUND / FUND IF / PASS
+## The main reason for my vote
+One or two sentences, then at most one supporting quote from quotes.md:
+> "<exact quote>" (<Person>, <source>)
 ## What is strong
 ## What would kill it (the top 3, most dangerous first)
+## My recommendation
+The one thing the founder should do next, then at most one supporting quote.
 ## The questions I would ask the founder
 ## If FUND IF: the conditions
 ```
@@ -85,7 +108,15 @@ Score: <1-10> | Vote: FUND / FUND IF / PASS
 
 Read the five memos (they are short) and write `launchproof/board.md`:
 
-1. The vote, e.g. "3 fund if, 1 fund, 1 pass", and the average score.
+1. The vote, e.g. "3 fund if, 1 fund, 1 pass", and the average score, then a
+   table of the five members, copied from their memos:
+
+   | board member | score | vote | main reason | recommendation | in their words |
+   | --- | ---: | --- | --- | --- | --- |
+   | Charlie Munger (Inversion) | 6 | FUND IF | ... | ... | "Invert, always invert." |
+
+   The last column holds the quote the member chose, word for word from
+   `quotes.md`, or stays empty.
 2. The risks more than one member raised: these go first.
 3. Every condition, merged, as a checklist the rest of the pack can tick off
    (the CFO, the consumer panel and pricing will test most of them).

@@ -452,5 +452,98 @@
    "hi": "Deeply meaningful",
    "help": "Meaning sustains motivation long after novelty fades."
   }
- ]
+ ],
+ "own_count": 5,
+ "own_examples": [
+  "Do you have personal freedom? (the lifestyle and autonomy you want)",
+  "Is it membership based? (recurring revenue and a community)",
+  "Is it meaningful for you?",
+  "Can I run it from home or online?",
+  "Does it fit my family schedule?",
+  "Can I start it with little money?",
+  "Does it use the skills I already have?",
+  "Could I sell the business one day?",
+  "Is it good for the environment or my community?",
+  "Can I work with people I like?",
+  "Is it close to where I live?",
+  "Will I still enjoy it in ten years?"
+ ],
+ "glossary": {
+  "novel": [
+   "Done before",
+   "Whether others already sell this. New is a plus, but execution matters more than novelty."
+  ],
+  "advantage": [
+   "Competitive advantage",
+   "Your unfair edge over rivals: lower cost, better technology, a brand, a network, or insight others lack."
+  ],
+  "crowded": [
+   "Crowded space",
+   "How many competitors already sell to the same customers. Some competition proves demand; too much kills margins."
+  ],
+  "rare": [
+   "Rare",
+   "How hard it is to find something like this. Rarity supports higher prices."
+  ],
+  "noCopy": [
+   "Can't be copied",
+   "How hard it is for a rival to copy you, thanks to patents, know-how, contracts, a network or switching costs. Often called a moat."
+  ],
+  "noSub": [
+   "Can't be substituted",
+   "A substitute is a different way to get the same job done (for a taxi: walking, a bus, a bicycle). Fewer substitutes is better."
+  ],
+  "scalable": [
+   "Scalable",
+   "Revenue can grow much faster than costs and staff. Software scales; a one-person service usually does not."
+  ],
+  "simple": [
+   "Uncomplicated",
+   "Easy to explain, build and run. Simple businesses launch faster and break less."
+  ],
+  "custBase": [
+   "Predictable customer base",
+   "You know exactly who buys, and you can find more of them again and again."
+  ],
+  "revenue": [
+   "Predictable revenue",
+   "Money that comes in regularly: subscriptions, retainers, repeat orders. One-off projects are unpredictable."
+  ],
+  "income": [
+   "Income potential",
+   "How big the business can get: whether the market is large enough for your goals."
+  ],
+  "barrier": [
+   "Entry barrier",
+   "What it takes to start this kind of business: money, licenses, skills. A low barrier is easy for you, but also for every competitor, so it scores low."
+  ],
+  "ocean": [
+   "Blue ocean or red ocean",
+   "A red ocean is an existing market full of competitors fighting on price. A blue ocean is new, uncontested market space where you set the rules. Blue scores high."
+  ],
+  "effect": [
+   "Effectuation",
+   "Starting from what you already have (who you are, what you know, who you know) instead of waiting for the perfect plan or big funding."
+  ],
+  "expertise": [
+   "Expertise",
+   "Hands-on skill at doing the work itself."
+  ],
+  "knowledge": [
+   "Knowledge",
+   "Understanding of the market, the customers and the industry."
+  ],
+  "acquire": [
+   "Can expertise be acquired?",
+   "If you lack a skill today, how fast you could learn it or hire someone who has it."
+  ],
+  "obvious": [
+   "That's obvious!",
+   "The gut check: when you explain the idea, people get it at once and say 'why doesn't this exist already?'"
+  ],
+  "failure": [
+   "Probability of failure",
+   "How likely the business is to fail, counting the risks you cannot control. A LOW chance of failure gets a HIGH score."
+  ]
+ }
 }

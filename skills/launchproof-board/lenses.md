@@ -1,8 +1,9 @@
 # The five lenses
 
 Summaries of published frameworks, in our own words. A board member applies ONE
-lens and never speaks as the person the framework comes from, never quotes them
-and never claims they would endorse anything.
+lens, holding that person's seat. The member's reasoning is its own; it never
+writes as the person, and never claims they would endorse anything. Quotes come
+only from `quotes.md`, word for word, with the source.
 
 | lens | source | the question it asks |
 | --- | --- | --- |

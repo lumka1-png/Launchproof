@@ -130,9 +130,12 @@ also its own skill you can run alone.
 | Leverage lens | *The Almanack of Naval Ravikant* | Does this compound without the founder's hours? |
 | Inversion lens | *Poor Charlie's Almanack* (Charlie Munger) | How does this fail, and is that avoidable? |
 
-Each member votes fund, fund if, or pass. The board's disagreements are kept,
-and its kill criteria (the results that mean stop) are checked again at every
-gate.
+Each member votes fund, fund if, or pass, gives the main reason and one
+recommendation, and backs them with a real quote from that person, taken word for
+word from a sourced quote bank (`skills/launchproof-board/quotes.md`), for
+example *Charlie Munger: "Invert, always invert."* The board's disagreements are
+kept, and its kill criteria (the results that mean stop) are checked again at
+every gate.
 
 ## IdeaGauge, the Business Idea Evaluator
 
@@ -149,6 +152,12 @@ check the result against the app's math on fifty ideas across every verdict.
 | Score passes, but a gate fails | 60+ overall, a section under its minimum |
 | Needs work | 45 to 59 |
 | Back to the drawing board | under 45 |
+
+You also add five criteria of your own (personal freedom, working from home,
+fitting your family schedule...), as in the app. Every term (blue ocean,
+effectuation, entry barrier and so on) is explained in plain words, and the
+report shows your score as bar charts and a radar chart of six dimensions:
+Demand, Moat, Market, Economics, Founder fit and Execution.
 
 Already scored your idea in the app? Export your data and run
 `/launchproof-score` on the file. Launchproof keeps your scores and adds a
@@ -243,13 +252,15 @@ python3 -m unittest discover -s tests -v
 
 ## Fine print
 
-**The board applies published frameworks. It is not those people.** The five
-lenses are short summaries, in our words, of ideas from *$100M Offers* by Alex
+**The board applies published frameworks. It is not those people.** Each seat
+is named after the person whose framework it applies, but the reasoning and the
+recommendations are the board's own. Quotes are real, published lines copied
+word for word from the sourced quote bank, never invented. The five lenses are
+short summaries, in our words, of ideas from *$100M Offers* by Alex
 Hormozi, *Zero to One* by Peter Thiel with Blake Masters, *Oversubscribed*, *Key
 Person of Influence* and *24 Assets* by Daniel Priestley, *The Almanack of Naval
 Ravikant* by Eric Jorgenson, and *Poor Charlie's Almanack* edited by Peter
-Kaufman. The board never speaks as them, quotes them or claims they endorse
-anything. This project is not affiliated with any of them.
+Kaufman. The board never writes as them or claims they endorse anything. This project is not affiliated with any of them.
 
 **Scores are judgments, not measurements.** IdeaGauge tells you what to test
 first, not whether the business will work.
@@ -276,7 +287,7 @@ confirms it.
 skills/launchproof/              SKILL.md (the conductor)
 skills/launchproof-fit/          SKILL.md
 skills/launchproof-score/        SKILL.md, evaluator.py, criteria.json
-skills/launchproof-board/        SKILL.md, lenses.md
+skills/launchproof-board/        SKILL.md, lenses.md, quotes.md
 skills/launchproof-redteam/      SKILL.md, threats.py
 skills/launchproof-competitors/  SKILL.md
 skills/launchproof-consumer/     SKILL.md, panel.py, customer.example.json, pitch.example.md
