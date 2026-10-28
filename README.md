@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo/launchproof-logo-dark.svg">
+    <img alt="Launchproof" src="assets/logo/launchproof-logo-light.svg" width="460">
+  </picture>
+</p>
+
 # Launchproof
 
 **Test your business idea before you spend a dollar on it.**
@@ -103,6 +110,11 @@ The tools need Python 3.8 or newer. Nothing to pip install.
 also its own skill you can run alone.
 
 ## Launchproof Light: the quick version
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/logo/launchproof-light-logo-dark.svg">
+  <img alt="Launchproof Light" src="assets/logo/launchproof-light-logo-light.svg" width="380">
+</picture>
 
 No time for the full journey? `/launchproof-light` gives a fast, to-the-point
 read on an idea and a PowerPoint deck to put in front of your team.
@@ -330,6 +342,7 @@ skills/launchproof-ops/          SKILL.md
 skills/launchproof-launch/       SKILL.md
 skills/launchproof-blueprint/    SKILL.md, blueprint.py, steps.json
 skills/launchproof-light/        SKILL.md, deck.py, example.deck.json, lenses.md, quotes.md
+assets/logo/                     the logo: SVG and PNG, dark and light, icon, favicon
 tests/                           the tests for every tool
 ```
 

@@ -67,7 +67,11 @@ class Repo(unittest.TestCase):
     def test_readme_carries_the_copy(self):
         with open(os.path.join(ROOT, "README.md"), encoding="utf-8") as fh:
             readme = " ".join(fh.read().split())
-        self.assertTrue(readme.startswith("# Launchproof"))
+        self.assertTrue(readme.startswith('<p align="center">'))
+        self.assertIn("# Launchproof", readme)
+        for f in ("launchproof-logo-dark.svg", "launchproof-logo-light.svg", "launchproof-light-logo-dark.svg"):
+            self.assertIn("assets/logo/" + f, readme)
+            self.assertTrue(os.path.exists(os.path.join(ROOT, "assets", "logo", f)), f)
         for line in (
             "**Test your business idea before you spend a dollar on it.**",
             "Paste this repo link into Claude and say `install skill`",
